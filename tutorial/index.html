@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+	<title>Vue.js App</title>
+	<link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+	<div id="app">
+		<hello-comp></hello-comp>
+		<!-- テンプレート書いていく -->
+		<ol>
+			<li v-for="item in list">{{ item }}</li>
+		</ol>
+	</div>
+
+	<div id="app-3">
+		<span v-if="seen">Now you see me</span>
+	</div>
+
+	<div id="app-5">
+		<p>{{ message }}</p>
+		<button v-on:click="reverseMessage">Reverse Message</button>
+	</div>
+
+	<div id="app-6">
+		<p>{{ message }}</p>
+		<input v-model="message">
+	</div>
+
+	<div id="app8">
+		<ul>
+			<li v-for="value in user">{{ value }}</li>
+		</ul>
+		<hr>
+		<ul>
+			<li v-for="(value,key) in user">
+				{{ value }} : {{ key }}
+			</li>
+		</ul>
+	</div>
+
+	<div id="app9">
+		<button v-on:click="onclick">
+			Click!
+		</button>
+		<p>
+			{{ now }}
+		</p>
+	</div>
+
+	<div id="app10">
+		<p>
+			<input type="text" v-model="message">
+		</p>
+		<p>
+			<input type="text" v-model="message">
+		</p>
+		<pre>{{ $data }}</pre>
+	</div>
+
+	<hello-comp></hello-comp>
+
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+	<script src="main.js"></script>
+</body>
+</html>
